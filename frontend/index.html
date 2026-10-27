@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PetCare Solutions • Central de Consultas Neumorphic</title>
+  
+  <!-- Tipografia Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="src/styles.css">
+</head>
+<body>
+
+  <!-- Topo Fluido Estilo Aurora -->
+  <header class="aurora-hero">
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span class="badge-dot"></span> SGBD Relacional • PetCare
+      </div>
+      <h1 class="hero-title">PetCare Solutions</h1>
+      <p class="hero-subtitle">
+        Auditoria de integridade, inteligência operacional e regras de negócio com suporte total a transações ACID e consultas relacionais complexas.
+      </p>
+    </div>
+
+    <!-- Transição Orgânica em Ondas -->
+    <div class="wave-transition">
+      <svg viewBox="0 0 1440 220" preserveAspectRatio="none">
+        <path class="wave-back" d="M0,64L48,80C96,96,192,128,288,122.7C384,117,480,75,576,69.3C672,64,768,96,864,117.3C960,139,1056,149,1152,133.3C1248,117,1344,75,1392,53.3L1440,32L1440,220L1392,220C1344,220,1248,220,1152,220C1056,220,960,220,864,220C768,220,672,220,576,220C480,220,384,220,288,220C192,220,96,220,48,220L0,220Z"></path>
+        <path class="wave-front" d="M0,128L48,144C96,160,192,192,288,186.7C384,181,480,139,576,112C672,85,768,75,864,90.7C960,107,1056,149,1152,154.7C1248,160,1344,128,1392,112L1440,96L1440,220L1392,220C1344,220,1248,220,1152,220C1056,220,960,220,864,220C768,220,672,220,576,220C480,220,384,220,288,220C192,220,96,220,48,220L0,220Z"></path>
+      </svg>
+    </div>
+  </header>
+
+  <!-- Corpo Principal Neumórfico -->
+  <main class="app-container">
+    
+    <!-- Painel de Seleção e Ação -->
+    <section class="neuro-card">
+      <div class="section-title">
+        <div class="dot-indicator"></div>
+        <h3>Regra de Negócio & Consulta Parametrizada</h3>
+      </div>
+      <p class="section-desc">Selecione uma das 15 operações modeladas para verificar o retorno de dados:</p>
+
+      <div class="controls-row">
+        <div class="select-wrapper neuro-inset">
+          <select id="querySelect">
+            <!-- 15 consultas preenchidas via app.js -->
+          </select>
+        </div>
+        <button id="btnExecutar" class="neuro-btn-primary">
+          <span>Executar Consulta</span>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="9 18 15 12 9 6"></polyline>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Caixa de descrição da regra -->
+      <div id="queryDescription" class="neuro-desc-box neuro-inset">
+        <!-- Texto descritivo -->
+      </div>
+    </section>
+
+    <!-- Terminal da Sintaxe SQL -->
+    <section class="neuro-card">
+      <div class="section-title">
+        <div class="dot-indicator"></div>
+        <h3>Instrução SQL Executada</h3>
+      </div>
+
+      <div class="neuro-terminal neuro-inset">
+        <div class="terminal-bar">
+          <div class="dots-group">
+            <span class="dot d-red"></span>
+            <span class="dot d-yellow"></span>
+            <span class="dot d-green"></span>
+          </div>
+          <span class="terminal-tag">PostgreSQL Relational Core</span>
+        </div>
+        <pre><code id="sqlCode">-- Carregando instrução relacional...</code></pre>
+      </div>
+    </section>
+
+    <!-- Tabela Neumórfica com os Dados Retornados -->
+    <section class="neuro-card">
+      <div class="table-header-flex">
+        <div class="section-title">
+          <div class="dot-indicator"></div>
+          <h3>Dados Retornados da Consulta</h3>
+        </div>
+        <div id="tableCounter" class="neuro-pill neuro-flat">0 registros</div>
+      </div>
+
+      <div class="neuro-table-wrapper neuro-inset">
+        <table id="resultTable">
+          <thead>
+            <tr id="tableHead"></tr>
+          </thead>
+          <tbody id="tableBody"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="neuro-card">
+      <div class="table-header-flex">
+        <div class="section-title">
+          <div class="dot-indicator"></div>
+          <h3>Benefícios do uso do banco relacional</h3>
+        </div>
+        <div id="tableCounter" class="neuro-pill neuro-flat">15 regras de negócio</div>
+      </div>
+        <div class="neuro-table-wrapper neuro-inset">
+            <table id="benefitsTable">
+            <thead>
+                <tr>
+                <th>Benefício</th>
+                <th>Descrição</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                <td>Integridade Referencial</td>
+                <td>Garante que os relacionamentos entre tabelas sejam consistentes, evitando dados órfãos.</td>
+                </tr>
+                <tr>
+                <td>Transações ACID</td>
+                <td>Assegura que todas as operações de banco de dados sejam confiáveis e consistentes.</td>
+                </tr>
+                <tr>
+                <td>Consultas Complexas</td>
+                <td>Permite a execução de consultas avançadas utilizando JOINs, subconsultas e agregações.</td>
+                </tr>
+                <tr>
+                <td>Escalabilidade</td>
+                <td>Facilita o crescimento do banco de dados sem comprometer a performance.</td>
+                </tr>
+                <tr>
+                <td>Segurança Avançada</td>
+                <td>Oferece mecanismos robustos de autenticação e autorização para proteger os dados.</td>
+                </tr>
+            </tbody>
+            </table>
+        </div>
+        
+        
+    </section>
+
+  </main>
+
+  <footer class="app-footer">
+    <p>PetCare Solutions © 2026 • Sistema de Modelagem de Banco de Dados</p>
+  </footer>
+
+  <script src="src/app.js"></script>
+</body>
+</html>
