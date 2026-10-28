@@ -9,7 +9,7 @@
 
   /* Cores Base Neumorphism (Soft UI) */
   --neuro-bg: #e6edf4;
-  --neuro-light: #ffffff;
+  --neuro-light: #ffffff6e;
   --neuro-shadow: #c4d0dc;
   --neuro-text: #1e293b;
   --neuro-text-sub: #64748b;
@@ -135,7 +135,7 @@ body {
 .neuro-card {
   background: var(--neuro-bg);
   border-radius: 1px;
-  padding: 2.2rem;
+  padding: 2rem;
   box-shadow: var(--shadow-flat);
   border: 1px solid var(--neuro-border);
 }
